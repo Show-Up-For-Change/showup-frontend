@@ -1,30 +1,26 @@
 import React, { Component } from "react";
 import FacebookLogin from "react-facebook-login";
+import {setUserLocalStorage} from '../../localStorage'
+import {login} from '../../store/user'
+import {connect} from 'react-redux'
 
 class Facebook extends Component {
-  state = {
-    isLoggedIn: false,
-    userID: "",
-    name: "",
-    email: "",
-  };
 
-  responseFacebook = (response) => {
-    // console.log(response);
-
-    this.setState({
-      isLoggedIn: true,
-      userID: response.userID,
-      name: response.name,
-      email: response.email,
-    });
+  responseFacebook = async (response) => {
+    // response = await response;
+    console.log(response);
+    console.log(response.name)
+    if (response) {
+      setUserLocalStorage(response.email, response.userID, response.name)
+      this.props.setUserStore(response.email, response.userID, response.name)
+    }
   };
 
   componentClicked = () => console.log("clicked");
   render() {
     let fbContent;
 
-    if (this.state.isLoggedIn) {
+    if (this.props.name) {
       fbContent = (
         <div
           style={{
@@ -34,8 +30,8 @@ class Facebook extends Component {
             padding: "20px",
           }}
         >
-          <h2>Welcome {this.state.name}</h2>
-          Email: {this.state.email}
+          <h2>Welcome {this.props.name}</h2>
+          Email: {this.props.email}
         </div>
       );
     } else {
@@ -53,4 +49,17 @@ class Facebook extends Component {
   }
 }
 
-export default Facebook;
+const mapStateToProps = state => {
+  return {
+    name: state.user.name,
+    email: state.user.email
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUserStore: (email, facebookId, name)=>{dispatch(login(email, facebookId, name))}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Facebook)

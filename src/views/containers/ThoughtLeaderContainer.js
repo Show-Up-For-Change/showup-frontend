@@ -6,7 +6,7 @@ import ThoughtLeader from '../components/ThoughtLeader'
 class ThoughtLeadersContainer extends Component {
 
   componentDidMount() {
-    // this.props.getLeaders();
+    this.props.getLeaders();
   }
 
   render () {

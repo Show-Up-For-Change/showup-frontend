@@ -12,10 +12,11 @@ const getInfo = (info) => ({
   info
 })
 
-export const login = (email, facebookId) => ({
+export const login = (email, facebookId, name) => ({
   type: LOGIN,
   email,
-  facebookId
+  facebookId,
+  name
 })
 
 //Thunks
@@ -34,6 +35,7 @@ export const fetchInfo = (email) => async dispatch => {
 const initialState = {
   email: null,
   facebookId: null,
+  name: null,
   whyStatement: "",
   actionsTaken: [],
   commitments: []
@@ -44,7 +46,7 @@ const initialState = {
 export default function userReducer (state = initialState, action) {
   switch (action.type){
     case LOGIN:
-      return {...state, email: action.email, facebookId: action.facebookId}
+      return {...state, email: action.email, facebookId: action.facebookId, name: action.name}
     case GET_USER_INFO:
       return {...state, whyStatement: action.why, actionsTaken: action.actionsTaken, commitments: action.commitments}
     default:
