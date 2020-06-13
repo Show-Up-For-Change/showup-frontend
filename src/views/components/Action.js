@@ -6,6 +6,8 @@ import { connect } from "react-redux"
 class Action extends Component {
 
     render() {
-        return
+        return (
+            
+        )
     }
 }
