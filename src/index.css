@@ -1,8 +1,5 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +7,146 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+	--black: #000;
+	--grey-dk: #272727;
+	--grey-lt: #272727;
+	--white: #fff;
+	--yellow: #fce21b;
+
+	--gutter: 1.75rem;
+
+	--regular: 400;
+	--semibold: 600;
+	--bold: 700;
+	--extrabold: 800;
+	--blackweight: 900;
+}
+
+html {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.h1 {
+	font-size: 2rem;
+	font-weight: var(--semibold);
+
+strong {
+	font-weight: var(--extrabold);
+}
+}
+
+@media(min-width: 769px) {
+	.h1 {
+		font-size: 3.5rem;
+	}
+}
+
+.h2-alt {
+	font-weight: var(--regular);
+}
+
+.h3 {
+	margin-bottom: 0;
+}
+
+.tag + .h3 {
+	margin-top: 0;
+}
+
+.background-black {
+	background-color: var(--black);
+}
+
+.background-yellow {
+	background-color: var(--yellow);
+}
+
+.background-white {
+	background-color: var(--white);
+}
+
+.text-white {
+	color: var(--white);
+}
+
+.text-grey {
+	color: var(--grey-dk);
+}
+
+.text-yellow {
+	color: var(--yellow);
+}
+
+.text-center {
+	text-align: center;
+}
+
+@media(min-width: 769px) {
+	.flex-wrapper {
+		display: flex;
+	}
+
+	.flex-wrapper.actions-list {
+		justify-content: space-between;
+	}
+}
+
+
+@media(min-width: 769px) {
+	.col-4 {
+		width: 33%;
+	}
+
+	.col-7 {
+		width: 60%
+	}
+}
+
+.button-yellow {
+	background-color: var(--yellow);
+	font-size: 1rem;
+	font-weight: 900;
+	padding: 1rem 2.5rem;
+	border: none;
+}
+
+.tag {
+	color: var(--grey-dk);
+	display: inline-block;
+	font-size: .7rem;
+	padding-right: 1rem;
+}
+
+.card-text {
+	margin-top: .5rem;
+}
+
+/* Spacing */
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding-left: var(--gutter);
+	padding-right: var(--gutter);
+}
+
+.padding-vertical {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+@media(min-width: 769px) {
+	.padding-vertical {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+}
+
+@media(min-width: 1024px) {
+	.padding-vertical {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
 }
