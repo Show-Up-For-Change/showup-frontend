@@ -1,16 +1,15 @@
-5 lines (95 sloc)  3.41 KB
+import {Component} from "react"
 
-import React, {Component} from "react"
-import { connect } from "react-redux"
-
-class Action extends Component {
-
-    constructor(props) {
-        super(props)
-    }
+export default class Action extends Component {
 
     render() {
         const {action} = this.props
-        return
+        return (
+            <div className = 'action-item'>
+                <p className = 'tag'>{action.subject}</p>
+                <h3 className = 'h3 text-grey'>{action.title}</h3>
+                <p className = 'card-text'>{action.details}</p>
+            </div>
+        )
     }
 }
