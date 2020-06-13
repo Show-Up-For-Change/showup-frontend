@@ -8,6 +8,11 @@
     --gutter: 1.75rem;
 }
 
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 
 @media(min-width: 769px) {
     .h1 {
@@ -43,13 +48,6 @@
     color: var(--yellow);
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-}
-
 .text-center {
     text-align: center;
 }
@@ -81,4 +79,31 @@
     display: inline-block;
     font-size: .7rem;
     padding-right: 1rem;
+}
+
+/* Spacing */
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+.padding-vertical {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@media(min-width: 769px) {
+    .padding-vertical {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .padding-vertical {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
 }
