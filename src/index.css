@@ -56,6 +56,11 @@ strong {
 	margin-top: 0;
 }
 
+.background-img {
+	background: var(--black) url('img/hero-image.jpg') bottom no-repeat;
+	background-size: cover;
+}
+
 .background-black {
 	background-color: var(--black);
 }
@@ -149,4 +154,22 @@ strong {
 		padding-top: 4rem;
 		padding-bottom: 4rem;
 	}
+}
+
+.position-relative {
+	position: relative;
+}
+
+.position-absolute {
+	left: 0;
+	opacity: 0.2;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.z-2 {
+	z-index: 2;
 }
