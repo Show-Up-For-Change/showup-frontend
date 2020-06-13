@@ -4,15 +4,21 @@ import ActionsContainer from './views/containers/ActionsContainer'
 import Header from "./views/components/Header";
 import {Quote} from "./views/components/Quote"
 import ThoughtLeadersContainer from './views/containers/ThoughtLeaderContainer'
-import ThoughtLeader from './views/components/ThoughtLeader';
+import Facebook from "./views/components/Facebook";
 
 function App() {
   return (
     <div className="App">
+      <a href="#main-content" className = "visually-hidden focusable skip-link">
+		    Skip to main content
+	    </a>
+      <div id = "main-content">
+      <Facebook />
       <Header/>
       <ActionsContainer/>
       <Quote/>
       <ThoughtLeadersContainer/>
+      </div>
     </div>
   );
 }
