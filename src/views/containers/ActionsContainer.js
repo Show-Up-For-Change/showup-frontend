@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import {connect} from 'react-redux';
-import fetchActions from '../../store/actions'
+import {fetchActions} from '../../store/actions'
 import Action from '../components/Action'
 
 class ActionsContainer extends Component {
@@ -12,12 +12,11 @@ class ActionsContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.getActions();
+    // this.props.getActions();
   }
 
   handleRefreshButton () {
-    this.props.getActions();
-
+    // this.props.getActions();
   }
 
   render() {
