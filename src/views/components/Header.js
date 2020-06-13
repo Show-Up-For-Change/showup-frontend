@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import Facebook from "./Facebook";
 
 class Header extends Component {
   render() {
     return (
       <div className="background-black padding-vertical">
+        <Facebook />
         <div className="container">
           <div className="flex-wrapper">
             <div className="col-4 text-white">

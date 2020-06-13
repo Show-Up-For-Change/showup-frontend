@@ -7,7 +7,7 @@ import {Quote} from "./views/components/Quote"
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <ActionsContainer/>
       <Quote/>
     </div>
