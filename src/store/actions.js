@@ -15,7 +15,7 @@ const getActions = (actions) => ({
 
 export const fetchActions = () => async dispatch => {
   try {
-    const {data} = axios.get('https://salty-reef-54378.herokuapp.com/actions')
+    const {data} = await axios.get('https://salty-reef-54378.herokuapp.com/actions')
     dispatch(getActions(data))
 
   } catch (err) {

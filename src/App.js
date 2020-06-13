@@ -1,14 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import ActionsContainer from './views/containers/ActionsContainer'
 import Header from "./views/components/Header";
+import {Quote} from "./views/components/Quote"
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <ActionsContainer/>
+      <Quote/>
     </div>
   );
 }
