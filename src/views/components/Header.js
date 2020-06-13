@@ -17,8 +17,9 @@ class Header extends Component {
 
             <div className="col-7 text-white">
               <p className="intro">
-                <strong>Show Up</strong> is a place to set goals, track growth
-                and keep going in your journey to fight systemic racism.
+                <strong>Show Up for Change</strong> is a place to set goals,
+                track growth and keep going in your journey to fight systemic
+                racism.
               </p>
 
               <p>
