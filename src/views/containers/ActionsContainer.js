@@ -9,7 +9,7 @@ class HashtagsContainer extends Component {
   render() {
 
     return (
-  
+
     )
   }
 }
@@ -17,11 +17,11 @@ class HashtagsContainer extends Component {
 
   const mapStateToProps = state => {
     return {
-      
+
     }
   }
 
   const mapDispatchToProps = {
-  
+
   }
 

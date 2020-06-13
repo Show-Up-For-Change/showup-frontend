@@ -13,10 +13,10 @@ const getActions = (actions) => ({
 
 //Thunks
 
-const fetchActions = () => async dispatch => {
+export const fetchActions = () => async dispatch => {
   try {
-    // const {data} = axios.get(API endpoint goes here)
-    //dispatch(getActions(data))
+    const {data} = axios.get('https://salty-reef-54378.herokuapp.com/actions')
+    dispatch(getActions(data))
 
   } catch (err) {
     console.error(err)
