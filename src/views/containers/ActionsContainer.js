@@ -1,12 +1,12 @@
-import {Component} from "react"
+import React, {Component} from "react"
 import {connect} from 'react-redux';
 import fetchActions from '../../store/actions'
 import Action from '../components/Action'
 
-class HashtagsContainer extends Component {
+class ActionsContainer extends Component {
 
   componentDidMount() {
-    this.props.getActions();
+    // this.props.getActions();
   }
 
   render() {
@@ -38,5 +38,5 @@ class HashtagsContainer extends Component {
     }
   }
 
-  export default connect(mapStateToProps, mapDispatchToProps)(HashtagsContainer)
+  export default connect(mapStateToProps, mapDispatchToProps)(ActionsContainer)
 
