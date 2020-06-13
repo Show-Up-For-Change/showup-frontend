@@ -11,6 +11,7 @@ class ThoughtLeadersContainer extends Component {
 
   render () {
     const { leaders } = this.props
+
     const exampleThoughtLeader1 = {
       handle: "blklivesmatter",
       image_url: "https://scontent-lga3-1.cdninstagram.com/v/t51.2885-19/s150x150/62506483_2047623088866232_6427818759221673984_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_ohc=-iNsPSFBRx4AX_Xcs78&oh=c2259cfaf4f1e1dfa776be5d71e8aad7&oe=5F0DF02F"
