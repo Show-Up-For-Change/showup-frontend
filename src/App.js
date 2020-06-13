@@ -4,6 +4,7 @@ import ActionsContainer from './views/containers/ActionsContainer'
 import Header from "./views/components/Header";
 import {Quote} from "./views/components/Quote"
 import ThoughtLeadersContainer from './views/containers/ThoughtLeaderContainer'
+import Facebook from "./views/components/Facebook";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
 		    Skip to main content
 	    </a>
       <div id = "main-content">
+      <Facebook />
       <Header/>
       <ActionsContainer/>
       <Quote/>
