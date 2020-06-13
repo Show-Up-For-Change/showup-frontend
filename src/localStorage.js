@@ -11,8 +11,10 @@ export const removeUserLocalStorage = () => {
 export const getUserLocalStorage = () => {
   const email = localStorage.getItem("email")
   const facebookId = localStorage.getItem("facebookId")
+  const name = localStorage.getItem("name")
   return {
     email,
-    facebookId
+    facebookId,
+    name
   }
 }

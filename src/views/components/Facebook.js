@@ -7,10 +7,7 @@ import {connect} from 'react-redux'
 class Facebook extends Component {
 
   responseFacebook = async (response) => {
-    // response = await response;
-    console.log(response);
-    console.log(response.name)
-    if (response) {
+    if (response.name && response.email && response.facebookId) {
       setUserLocalStorage(response.email, response.userID, response.name)
       this.props.setUserStore(response.email, response.userID, response.name)
     }
