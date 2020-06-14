@@ -5,12 +5,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './store/index'
+import {Router} from 'react-router-dom'
+import {createBrowserHistory} from 'history'
 
 ReactDOM.render(
   <Provider store = {store}>
+    <Router history = {createBrowserHistory()}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

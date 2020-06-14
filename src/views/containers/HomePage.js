@@ -26,7 +26,7 @@ class HomePage extends Component {
   render () {
     return (
       <div id = "main-content">
-        {/* <Facebook /> */}
+        <Facebook />
         <Header/>
         <ActionsContainer/>
         <Quote/>

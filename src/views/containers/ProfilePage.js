@@ -1,46 +1,42 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchActions } from "../../store/actions";
-import Action from "../components/Action";
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {getUserLocalStorage} from '../../localStorage'
+import {Redirect} from 'react-router-dom'
+import NavBar from "../components/NavBar"
+import ProfileHeader from '../components/ProfileHeader'
+import {fetchInfo} from '../../store/user'
 
-class ActionsContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleRefreshButton = this.handleRefreshButton.bind(this);
-  }
-
+class ProfilePage extends Component {
   componentDidMount() {
-    this.props.getActions();
-  }
-
-  handleRefreshButton() {
-    // this.props.getActions();
+    const id = getUserLocalStorage().facebookId
+    this.props.getUserInfo(id)
   }
 
   render() {
-    const { actions } = this.props;
-    const handleRefreshButton = this.handleRefreshButton;
-    console.log(actions);
-
+    const loggedIn = getUserLocalStorage().facebookId
     return (
-      <div className="background-white container padding-vertical">
-        <div className="flex-wrapper actions-list"></div>
-      </div>
-    );
+      loggedIn ? (
+        <div className="background-black transparecy padding-vertical position-relative hero">
+          <ProfileHeader info = {this.props.info}/>
+        </div>
+
+      ) : (
+        <Redirect to="/"/>
+      )
+    )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    actions: state.actions.actions,
+    info: state.user
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getActions: () => dispatch(fetchActions()),
+    getUserInfo: (userID) => dispatch(fetchInfo(userID)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActionsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
