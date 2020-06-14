@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import {connect} from 'react-redux';
-import {fetchActions} from '../../store/actions'
+import {fetchActions, fetchCustomActions} from '../../store/actions'
 import Action from '../components/Action'
 
 class ActionsContainer extends Component {
@@ -12,11 +12,11 @@ class ActionsContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.getActions();
+    this.props.userId ? this.props.getCustomActions(this.props.userId) : this.props.getActions()
   }
 
   handleRefreshButton () {
-    this.props.getActions();
+    this.props.userId ? this.props.getCustomActions(this.props.userId) : this.props.getActions()
   }
 
   render() {
@@ -49,13 +49,15 @@ class ActionsContainer extends Component {
 
   const mapStateToProps = state => {
     return {
-      actions: state.actions.actions
+      actions: state.actions.actions,
+      userId: state.user.facebookId
     }
   }
 
   const mapDispatchToProps = dispatch => {
     return {
-      getActions: () => dispatch(fetchActions())
+      getActions: () => dispatch(fetchActions()),
+      getCustomActions: (id) => dispatch(fetchCustomActions(id))
     }
   }
 

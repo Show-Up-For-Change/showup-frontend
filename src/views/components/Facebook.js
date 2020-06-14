@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FacebookLogin from "react-facebook-login";
-import {setUserLocalStorage} from '../../localStorage'
+import {setUserLocalStorage, removeUserLocalStorage} from '../../localStorage'
 import {login} from '../../store/user'
 import {connect} from 'react-redux'
 
@@ -13,23 +13,19 @@ class Facebook extends Component {
     }
   };
 
-  componentClicked = () => console.log("clicked");
+  handleLogout () {
+    removeUserLocalStorage()
+  }
+
   render() {
     let fbContent;
+    const handleLogout = this.handleLogout
 
     if (this.props.name) {
       fbContent = (
-        <div
-          style={{
-            width: "400px",
-            margin: "auto",
-            background: "#f4f4f4",
-            padding: "20px",
-          }}
-        >
-          <h2>Welcome {this.props.name}</h2>
-          Email: {this.props.email}
-        </div>
+        <button onClick = {handleLogout} type = "submit">
+          Logout
+        </button>
       );
     } else {
       fbContent = (

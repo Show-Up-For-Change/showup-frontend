@@ -23,6 +23,15 @@ export const fetchActions = () => async dispatch => {
   }
 }
 
+export const fetchCustomActions = (id) => async dispatch => {
+  try {
+    const {data} = await axios.get(`https://salty-reef-54378.herokuapp.com/actions/${id}`)
+    dispatch(getActions(data))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 //Initial State
 
 const initialState = {
