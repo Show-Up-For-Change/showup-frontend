@@ -9,10 +9,12 @@ code {
     monospace;
 }
 
+
+
+/* Variables */
 :root {
 	--black: #000;
 	--grey-dk: #272727;
-	--grey-lt: #272727;
 	--white: #fff;
 	--yellow: #fce21b;
 
@@ -23,24 +25,99 @@ code {
 	--bold: 700;
 	--extrabold: 800;
 	--blackweight: 900;
+	--sm: 500px;
+	--md: 769px;
+	--lg: 1200px;
 }
 
-html {
+
+
+/* Base */
+html,
+body {
 	font-family: 'Montserrat', sans-serif;
+}
+
+nav li {
+	list-style: none;
+	display: inline-block;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.nav-text {
+	color: var(--white);
+	font-size: .8rem;
+	font-weight: var(--bold);
+	letter-spacing: .05em;
+}
+
+.nav-text:hover,
+.nav-text:focus {
+	color: var(--yellow);
+}
+
+.main-nav {
+	padding-top: var(--gutter);
+	padding-bottom: var(--gutter);
+}
+
+@media(min-width: 769px) {
+	.main-nav {
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.main-nav a {
+	text-decoration: none;
+}
+
+.hero {
+	margin-top: -6rem;
 }
 
 .h1 {
 	font-size: 2rem;
 	font-weight: var(--semibold);
+	line-height: 1.1;
+}
 
-strong {
+.h1.dash {
+	line-height: .6;
+}
+
+.h1 strong {
 	font-weight: var(--extrabold);
 }
+
+.h1 .subtitle {
+	font-size: 1rem;
+	font-weight: var(--semibold);
 }
 
 @media(min-width: 769px) {
 	.h1 {
 		font-size: 3.5rem;
+	}
+
+	.h1 .subtitle {
+		font-size: 1.5rem;
+	}
+}
+
+.h2 {
+	font-size: 1.5rem;
+	font-weight: var(--bold);
+	margin-top: 0;
+}
+
+@media(min-width: 769px) {
+	.h2 {
+		font-size: 2.5rem;
 	}
 }
 
@@ -49,8 +126,13 @@ strong {
 }
 
 .h3 {
+	font-size: 1.125rem;
 	font-weight: var(--semibold);
 	margin-bottom: 0;
+}
+
+.intro {
+	font-size: 1.3rem;
 }
 
 .tag + .h3 {
@@ -60,6 +142,7 @@ strong {
 .background-img {
 	background: var(--black) url('img/hero-image.jpg') bottom no-repeat;
 	background-size: cover;
+	opacity: .25;
 }
 
 .background-black {
@@ -98,71 +181,9 @@ strong {
 	text-align: center;
 }
 
-@media(min-width: 769px) {
-	.flex-wrapper {
-		display: flex;
-	}
-
-	.flex-wrapper.actions-list {
-		justify-content: space-between;
-	}
-}
-
-
-@media(min-width: 769px) {
-	.col-4 {
-		width: 33%;
-	}
-
-	.col-7 {
-		width: 60%
-	}
-}
-
-.button-yellow {
-	background-color: var(--yellow);
-	font-size: 1rem;
-	font-weight: 900;
-	padding: 1rem 2.5rem;
-	border: none;
-}
-
-.tag {
-	color: var(--grey-dk);
-	display: inline-block;
-	font-size: .7rem;
-	padding-right: 1rem;
-}
-
-.card-text {
-	margin-top: .5rem;
-}
-
-/* Spacing */
-.container {
-	margin: 0 auto;
-	max-width: 1200px;
-	padding-left: var(--gutter);
-	padding-right: var(--gutter);
-}
-
-.padding-vertical {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-
-@media(min-width: 769px) {
-	.padding-vertical {
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-	}
-}
-
-@media(min-width: 1024px) {
-	.padding-vertical {
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-	}
+.italic {
+	font-style: italic;
+	font-weight: var(--regular);
 }
 
 .position-relative {
@@ -178,26 +199,116 @@ strong {
 	height: 100%;
 }
 
+.small-text {
+	font-size: .7rem;
+	font-weight: var(--regular);
+}
+
+.small-text a {
+	color: var(--grey-dk);
+	text-decoration: underline;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+
 .z-2 {
 	z-index: 2;
 }
 
+.skip-link {
+	height: 1px;
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}
+
+
+/* Spacing */
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding-left: var(--gutter);
+	padding-right: var(--gutter);
+}
+
+.padding-vertical {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.padding-vertical.hero {
+	padding-top: 5rem;
+}
+
+@media(min-width: 769px) {
+	.padding-vertical {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+
+	.padding-vertical.hero {
+		padding-top: 6rem;
+	}
+}
+
+.flex-center {
+	align-items: center;
+}
+
+@media(min-width: 769px) {
+	.flex-wrapper {
+		display: flex;
+	}
+
+	.flex-wrapper.actions-list {
+		justify-content: space-between;
+	}
+}
+
+@media(min-width: 769px) {
+	.col-2 {
+		width: 17%;
+	}
+
+	.col-4 {
+		width: 34%;
+	}
+
+	.col-6 {
+		width: 50%;
+	}
+
+	.col-7 {
+		width: 60%
+	}
+}
+
+.card-text {
+	margin-top: .5rem;
+}
+
+
+
+/*Thought Leader Component*/
 .thought-leader {
 	display: inline-block;
-
 }
 
 .thought-leader img {
-	width: 12.5rem;
+	width: 100%;
+}
+
+@media(min-width: 769px) {
+	.thought-leader img {
+		width: 12.5rem;
+	}
 }
 
 .thought-leader .transparency {
 	opacity: .5;
-}
-
-.instagram-item {
-	display: none;
-	transition: all 300ms ease-in-out;
 }
 
 .thought-leader a:focus .instagram-item,
@@ -207,4 +318,118 @@ strong {
 	justify-content: center;
 	transition: all 300ms ease-in-out;
 	z-index: 2;
+}
+
+.instagram-item {
+	display: none;
+	transition: all 300ms ease-in-out;
+}
+
+.margin-bottom {
+	margin-bottom: var(--gutter);
+}
+
+.margin-right {
+	margin-right: var(--gutter);
+}
+
+.margin-zero {
+	margin: 0;
+}
+
+
+/* Elements */
+blockquote {
+	margin: 0;
+}
+
+.button-yellow {
+	background-color: var(--yellow);
+	border: none;
+	font-size: 1rem;
+	font-weight: 900;
+	padding: 1rem 2.5rem;
+	transition: background 300ms ease-in-out;
+}
+
+.button-yellow:hover,
+.button-yellow:focus {
+	background-color: var(--black);
+	color: var(--yellow);
+	transition: all 300ms ease-in-out;
+}
+
+.button-yellow.button-small {
+	font-size: .75rem;
+	padding: 1rem 1.75rem;
+}
+
+.checkmark {
+	height: 1rem;
+	left: -1.4rem;
+	top: 2.25rem;
+	width: 1rem;
+	z-index: 2;
+}
+
+.checkmark-square {
+	left: -1.7rem;
+	top: 2.45rem;
+	width: 1rem;
+	height: 1rem;
+	z-index: 1;
+}
+
+.completed-items {
+	margin-top: 0;
+}
+
+.dash-button.button-position {
+	margin-bottom: var(--gutter);
+}
+
+.number-large {
+	font-size: 2.625rem;
+	font-weight: var(--bold);
+}
+
+.number-large + p {
+	margin-top: 0;
+}
+
+.tag {
+	color: var(--grey-dk);
+	display: inline-block;
+	font-size: .7rem;
+	font-weight: var(--semibold);
+	padding-right: 1rem;
+	text-transform: uppercase;
+}
+
+
+
+/* Components */
+.action-item.completed {
+	margin-left: var(--gutter);
+}
+
+.commitments {
+	padding: 1rem 1rem 2rem;
+	text-align: center;
+}
+
+.commitments .background-yellow {
+	padding: 1rem;
+}
+
+.commitments .flex-wrapper {
+	justify-content: space-around;
+}
+
+.why {
+	margin-right: 12%;
+}
+
+.h1.dash {
+	margin-right: 8%;
 }
