@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Quote = props => {
+const Quote = props => {
   return (
     <div className = "background-yellow text-grey padding-vertical">
       <div className = "container">
@@ -13,3 +13,5 @@ export const Quote = props => {
     </div>
   )
 }
+
+export default Quote

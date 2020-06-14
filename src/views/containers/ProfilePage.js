@@ -8,6 +8,7 @@ import { fetchInfo } from "../../store/user";
 import history from "../../history";
 import WhyStatement from "../components/WhyStatement";
 import CompletedActions from '../containers/CompletedActions'
+import Quote from '../components/Quote'
 
 class ProfilePage extends Component {
   componentDidMount() {
@@ -32,6 +33,8 @@ class ProfilePage extends Component {
           <CompletedActions/>
           </div>
         </div>
+          <Quote/>
+          <footer className="footer background-black padding-vertical"></footer>
       </main>
     ) : (
       <div>{this.goHome()}</div>
