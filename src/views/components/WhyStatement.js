@@ -9,13 +9,13 @@ export default class WhyStatement extends Component {
     return (
       <div className="col-2 text-grey why">
         <div className="dash-button button-position">
+          <a href="/">
           <button
             className="button button-yellow button-small"
-            type="submit"
-            onClick={this.goHome}
           >
             Browse ways to ShowUp
           </button>
+          </a>
         </div>
 
         <h2 className="tag margin-bottom">Why I ShowUp</h2>

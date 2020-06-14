@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import ActionsContainer from './ActionsContainer'
 import Header from "../components/Header";
-import {Quote} from "../components/Quote"
+import Quote from "../components/Quote"
 import ThoughtLeadersContainer from './ThoughtLeaderContainer'
 import Facebook from "../components/Facebook";
 
