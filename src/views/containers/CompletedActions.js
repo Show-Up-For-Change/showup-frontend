@@ -9,16 +9,16 @@ export default class CompletedActionsContainer extends Component {
     const info = this.props;
 
     const exampleAction1 = {
-      subject: "Police",
-      title: "Example 1",
+      subject: "TEXT AND SIGN",
+      title: "Resist Bot - Contact your representatives in under 2 minutes",
       url: "https://blacklivesmatter.com/",
-      details: "Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example "
+      details: "Text the word RESIST to me on iMessage, Messenger, Twitter, Telegram, or to 50409 on SMS*"
     }
     const exampleAction2 = {
-      subject: "Police",
-      title: "Example 2",
+      subject: "CHALLENGE INJUSTICE",
+      title: "Contact Minneapolis Representatives",
       url: "https://blacklivesmatter.com/",
-      details: "Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example "
+      details: "Write a letter demanding justice to Minneapolis Mayor Jacob Frey. Demand County Attorney Mike Freeman charge the officers with murder by calling him at 612-348-5550."
     }
 
     //Test vvv

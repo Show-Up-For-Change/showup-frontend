@@ -23,18 +23,22 @@ class Facebook extends Component {
 
     if (this.props.name) {
       fbContent = (
+        <div className="nav-text upper margin-right">
         <button onClick = {handleLogout} type = "submit">
           Logout
         </button>
+        </div>
       );
     } else {
       fbContent = (
-        <FacebookLogin
-          appId="256209082150971"
-          autoLoad={false}
-          fields="name,email"
-          callback={this.responseFacebook}
-        />
+        <div className="nav-text upper margin-right">
+          <FacebookLogin
+            appId="256209082150971"
+            autoLoad={false}
+            fields="name,email"
+            callback={this.responseFacebook}
+          />
+        </div>
       );
     }
 

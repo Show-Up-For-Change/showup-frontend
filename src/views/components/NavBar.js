@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUserLocalStorage } from "../../localStorage";
+import {
+  getUserLocalStorage,
+  removeUserLocalStorage,
+} from "../../localStorage";
 import { Redirect } from "react-router-dom";
+import Facebook from "./Facebook";
 
 class NavBar extends Component {
   render() {
@@ -18,21 +22,28 @@ class NavBar extends Component {
             </li>
           </ul>
           <ul>
-            <li>
-              <a href="" className="nav-text upper margin-right">
-                Login
-              </a>
-            </li>
-            <li>
-              <a href="" className="nav-text upper margin-right">
-                Signup
-              </a>
-            </li>
-            <li>
-              <a href="" className="nav-text upper">
-                My Account
-              </a>
-            </li>
+            {loggedIn ? (
+              <div>
+                <li>
+                  <a
+                    href=""
+                    className="nav-text upper margin-right"
+                    onClick={removeUserLocalStorage}
+                  >
+                    Log Out
+                  </a>
+                </li>
+                <li>
+                  <a href="/account" className="nav-text upper">
+                    My Account
+                  </a>
+                </li>
+              </div>
+            ) : (
+              <li>
+                <Facebook />
+              </li>
+            )}
           </ul>
         </nav>
       </header>
@@ -41,7 +52,9 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    user: state.user,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

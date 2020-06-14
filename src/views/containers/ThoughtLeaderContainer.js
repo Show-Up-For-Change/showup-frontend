@@ -29,9 +29,9 @@ class ThoughtLeadersContainer extends Component {
       <div className = "background-black padding-vertical">
         <div className = "container">
         <h2 className = "h2 text-white">Thought Leaders to Follow</h2>
-          {/* <ThoughtLeader leader = {exampleThoughtLeader1}/>
+          <ThoughtLeader leader = {exampleThoughtLeader1}/>
           <ThoughtLeader leader = {exampleThoughtLeader2}/>
-          <ThoughtLeader leader = {exampleThoughtLeader3}/> */}
+          <ThoughtLeader leader = {exampleThoughtLeader3}/>
         {leaders ? (
           leaders.map(leader => <ThoughtLeader leader = {leader}/>)
         ) : (
