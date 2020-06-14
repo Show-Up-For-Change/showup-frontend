@@ -4,19 +4,9 @@ import { fetchCustomActions } from "../../store/actions";
 import Action from "../components/Action";
 
 export default class CompletedActionsContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleBackButton = this.handleBackButton.bind(this);
-  }
-
-  handleBackButton() {
-
-  }
 
   render() {
     const info = this.props;
-    const handleBackButton = this.handleBackButton;
 
     const exampleAction1 = {
       subject: "Police",
