@@ -3,44 +3,57 @@ import { connect } from "react-redux";
 import { fetchCustomActions } from "../../store/actions";
 import Action from "../components/Action";
 
-class ActionsContainer extends Component {
+export default class CompletedActionsContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.handleRefreshButton = this.handleRefreshButton.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.getActions();
+    this.handleBackButton = this.handleBackButton.bind(this);
   }
 
   handleBackButton() {
-    // this.props.getActions();
+
   }
 
   render() {
-    const { actions } = this.props;
+    const info = this.props;
     const handleBackButton = this.handleBackButton;
-    console.log(actions);
+
+    const exampleAction1 = {
+      subject: "Police",
+      title: "Example 1",
+      url: "https://blacklivesmatter.com/",
+      details: "Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example "
+    }
+    const exampleAction2 = {
+      subject: "Police",
+      title: "Example 2",
+      url: "https://blacklivesmatter.com/",
+      details: "Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example "
+    }
+
+    //Test vvv
+    const actions = [exampleAction1, exampleAction2]
+
+    // Production vvv
+    // const actions = info.actionsTaken
 
     return (
-      <div className="background-white container padding-vertical">
-        <div className="flex-wrapper actions-list"></div>
+      <div class="col-6">
+			<h2 class="h2 text-grey completed-items">Completed Items</h2>
+      {actions ? (
+        actions.map(action => {
+          return (
+            <article class="action-item completed position-relative margin-bottom">
+            <span class="checkmark position-absolute">&#10004;</span>
+			      <span class="checkmark-square background-yellow position-absolute"></span>
+            <Action action = {action}/>
+            </article>
+          )
+        })
+      ) : (
+        <p>None yet!</p>
+      )}
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    actions: state.actions.actions,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getActions: () => dispatch(fetchCustomActions()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ActionsContainer);
