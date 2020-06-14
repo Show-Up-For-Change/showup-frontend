@@ -23,7 +23,7 @@ export const login = (email, facebookId, name) => ({
 
 export const fetchInfo = (email) => async dispatch => {
   try {
-    const {data} = await axios.get(`https://salty-reef-54378.herokuapp.com/user/${email}`)
+    const {data} = await axios.get(`https://salty-reef-54378.herokuapp.com/users/${email}`)
     dispatch(getInfo(data))
   } catch (err) {
     console.error(err)

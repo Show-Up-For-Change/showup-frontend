@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import ProfileHeader from "../components/ProfileHeader";
 import { fetchInfo } from "../../store/user";
 import history from "../../history";
+import WhyStatement from "../components/WhyStatement";
 
 class ProfilePage extends Component {
   componentDidMount() {
@@ -25,7 +26,9 @@ class ProfilePage extends Component {
           <ProfileHeader info={this.props.info} />
         </div>
         <div class="background-white container padding-vertical">
-          <div class="flex-wrapper position-relative"></div>
+          <div class="flex-wrapper position-relative">
+            <WhyStatement/>
+          </div>
         </div>
       </main>
     ) : (
