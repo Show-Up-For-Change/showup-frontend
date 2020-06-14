@@ -15,7 +15,7 @@ const getLeaders = (leaders) => ({
 
 export const fetchLeaders = () => async dispatch => {
   try {
-    const {data} = await axios.get('https://salty-reef-54378.herokuapp.com/thoughtleaders')
+    const {data} = await axios.get('https://salty-reef-54378.herokuapp.com/thought_leaders')
     dispatch(getLeaders(data))
 
   } catch (err) {
