@@ -25,17 +25,17 @@ class ActionsContainer extends Component {
 
     return (
       <div className = "background-white container padding-vertical">
-        <div className = "flex-wrapper actions-list">
-          <h2 className = "h2 text-grey">Learn and Take Action</h2>
+        <div className = "col-6">
+          <h2 className = "h2 text-grey margin-bottom">Learn and Take Action</h2>
           <button
-          className = "button button-yellow"
+          className = "button button-yellow margin-bottom"
           type = "button"
           onClick = {handleRefreshButton}
           >
             Show me 3 more
           </button>
         </div>
-        <div className = "col-4">
+        <div className = "actions-list col-6 text-grey container">
          {actions ? (
             actions.map(action => <Action action = {action} />)
          ) : (

@@ -8,9 +8,10 @@ export default class Action extends Component {
             action ? (
             <div className = 'action-item'>
                 <p className = 'tag'>{action.subject}</p>
-                <a href = {action.url}>
-                    <h3 className = 'h3 text-grey'>{action.title}</h3>
-                </a>
+                <h3 className = 'h3 text-grey'>
+                  <a href = {action.url} target="_blank">
+                    {action.title}</a>
+                </h3>
                 <p className = 'card-text'>{action.details}</p>
             </div>
             ) : ''
