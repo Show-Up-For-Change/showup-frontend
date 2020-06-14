@@ -6,6 +6,8 @@ import NavBar from "../components/NavBar";
 import ProfileHeader from "../components/ProfileHeader";
 import { fetchInfo } from "../../store/user";
 import history from "../../history";
+import WhyStatement from "../components/WhyStatement";
+import CompletedActions from '../containers/CompletedActions'
 
 class ProfilePage extends Component {
   componentDidMount() {
@@ -24,8 +26,11 @@ class ProfilePage extends Component {
         <div className="background-black transparecy padding-vertical position-relative hero">
           <ProfileHeader info={this.props.info} />
         </div>
-        <div class="background-white container padding-vertical">
-          <div class="flex-wrapper position-relative"></div>
+        <div className="background-white container padding-vertical">
+          <div className="flex-wrapper position-relative">
+            <WhyStatement info={this.props.info}/>
+          <CompletedActions/>
+          </div>
         </div>
       </main>
     ) : (
