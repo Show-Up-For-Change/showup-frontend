@@ -61,14 +61,16 @@ nav ul {
 }
 
 .main-nav {
-	padding-top: var(--gutter);
-	padding-bottom: var(--gutter);
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 @media(min-width: 769px) {
 	.main-nav {
 		align-items: center;
 		justify-content: space-between;
+		padding-top: var(--gutter);
+		padding-bottom: var(--gutter);
 	}
 }
 
