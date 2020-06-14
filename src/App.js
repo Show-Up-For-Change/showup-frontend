@@ -10,7 +10,7 @@ function App() {
       <a href="#main-content" className = "visually-hidden focusable skip-link">
 		    Skip to main content
 	    </a>
-      {/* <NavBar/> */}
+      <NavBar/>
       <Route exact path='/account' component={ProfilePage}/>
       <Route exact path = '/' component={HomePage}/>
     </div>
