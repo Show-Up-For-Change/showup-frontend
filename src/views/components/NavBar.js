@@ -7,13 +7,13 @@ class NavBar extends Component {
   render() {
     const loggedIn = getUserLocalStorage().facebookId;
     return (
-      <div className="z-2 position-relative">
-        <div aria-label="main nav" className="main-nav container flex-wrapper">
+      <header className="z-2 position-relative">
+        <nav aria-label="main nav" className="main-nav container flex-wrapper">
           <ul className="">
             <li>
-              <a href="/" className="h3 text-white">
+              <a href="/" className="h3 text-yellow">
                 ShowUp <br />
-                <strong className="text-yellow">For Change</strong>
+                <strong className="text-white">For Change</strong>
               </a>
             </li>
           </ul>
@@ -34,8 +34,8 @@ class NavBar extends Component {
               </a>
             </li>
           </ul>
-        </div>
-      </div>
+        </nav>
+      </header>
     );
   }
 }

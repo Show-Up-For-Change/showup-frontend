@@ -3,14 +3,14 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     return (
-      <div className="background-black transparecy padding-vertical position-relative">
+      <div className="background-black transparecy padding-vertical position-relative hero">
         <span className = "background-img position-absolute"></span>
         <div className="container">
-          <div className="flex-wrapper">
+          <div className="flex-wrapper flex-center">
             <div className="col-4 text-white z-2">
-              <h1 className="h1 text-white">
+              <h1 className="h1 text-yellow">
                 Show Up <br />
-                <strong className="text-yellow">For Change</strong>
+                <strong className="text-white">For Change</strong>
               </h1>
             </div>
 
