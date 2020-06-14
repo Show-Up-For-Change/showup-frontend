@@ -3,18 +3,19 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     return (
-      <div class="background-black padding-vertical">
-        <div class="container">
-          <div class="flex-wrapper">
-            <div class="col-4 text-white">
-              <h1 class="h1 text-white">
+      <div className="background-black transparecy padding-vertical position-relative">
+        <span className = "background-img position-absolute"></span>
+        <div className="container">
+          <div className="flex-wrapper">
+            <div className="col-4 text-white z-2">
+              <h1 className="h1 text-white">
                 Show Up <br />
-                <strong class="text-yellow">For Change</strong>
+                <strong className="text-yellow">For Change</strong>
               </h1>
             </div>
 
-            <div class="col-7 text-white">
-              <p class="intro">
+            <div className="col-7 text-white position-relative z-2">
+              <p className="intro">
                 <strong>Show Up</strong> is a place to set goals, track growth
                 and keep going in your journey to fight systemic racism.
               </p>
