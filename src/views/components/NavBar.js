@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {
   getUserLocalStorage,
   removeUserLocalStorage,
+  generateUser
 } from "../../localStorage";
 import { Redirect } from "react-router-dom";
 import Facebook from "./Facebook";
@@ -41,7 +42,8 @@ class NavBar extends Component {
               </div>
             ) : (
               <li>
-                <Facebook />
+                {/* <Facebook /> */}
+                <a href='' className="nav-text upper" onClick={generateUser}>Login</a>
               </li>
             )}
           </ul>

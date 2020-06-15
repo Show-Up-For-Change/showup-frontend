@@ -12,7 +12,7 @@ export default class CompletedActionsContainer extends Component {
       subject: "TEXT AND SIGN",
       title: "Resist Bot - Contact your representatives in under 2 minutes",
       url: "https://blacklivesmatter.com/",
-      details: "Text the word RESIST to me on iMessage, Messenger, Twitter, Telegram, or to 50409 on SMS*"
+      details: "Text the word RESIST to me on iMessage, Messenger, Twitter, Telegram, or to 50409 on SMS*res"
     }
     const exampleAction2 = {
       subject: "CHALLENGE INJUSTICE",
