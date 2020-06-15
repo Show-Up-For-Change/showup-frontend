@@ -29,7 +29,7 @@ export default class WhyStatement extends Component {
           this commitment.
         </p>
         <p className="small-text italic">
-          <a href="">edit</a>
+          <a href="/account">edit</a>
         </p>
       </div>
     );

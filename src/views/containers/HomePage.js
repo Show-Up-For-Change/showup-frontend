@@ -5,7 +5,6 @@ import ActionsContainer from './ActionsContainer'
 import Header from "../components/Header";
 import Quote from "../components/Quote"
 import ThoughtLeadersContainer from './ThoughtLeaderContainer'
-import Facebook from "../components/Facebook";
 
 import {getUserLocalStorage} from '../../localStorage'
 import {login} from '../../store/user'
@@ -26,7 +25,6 @@ class HomePage extends Component {
   render () {
     return (
       <div id = "main-content">
-        {/* <Facebook /> */}
         <Header/>
         <ActionsContainer/>
         <Quote/>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUserLocalStorage } from "../../localStorage";
 import { Redirect } from "react-router-dom";
-import NavBar from "../components/NavBar";
 import ProfileHeader from "../components/ProfileHeader";
 import { fetchInfo } from "../../store/user";
 import history from "../../history";

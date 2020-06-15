@@ -37,7 +37,7 @@ class ActionsContainer extends Component {
         </div>
         <div className = "actions-list col-6 text-grey container">
          {actions ? (
-            actions.map(action => <Action action = {action} />)
+            actions.map(action => <Action action = {action} key = {action.id}/>)
          ) : (
            ''
          )}

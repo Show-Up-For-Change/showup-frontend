@@ -23,9 +23,6 @@ export const getUserLocalStorage = () => {
 
 export const generateUser = () => {
   const id = Number(Array(10).fill(0).map(x=>Math.floor(Math.random()*9)).join(''))
-  const user = {
-    facebookId: id
-  }
   setUserLocalStorage(null, id, null)
   localStorage.setItem("userId", id)
 }

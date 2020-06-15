@@ -5,8 +5,6 @@ import {
   removeUserLocalStorage,
   login
 } from "../../localStorage";
-import { Redirect } from "react-router-dom";
-import Facebook from "./Facebook";
 
 class NavBar extends Component {
 
@@ -28,7 +26,7 @@ class NavBar extends Component {
               <div>
                 <li>
                   <a
-                    href=""
+                    href="/"
                     className="nav-text upper margin-right"
                     onClick={removeUserLocalStorage}
                   >
@@ -44,7 +42,7 @@ class NavBar extends Component {
             ) : (
               <li>
                 {/* <Facebook /> */}
-                <a href='' className="nav-text upper" onClick={login}>Login</a>
+                <a href='/account' className="nav-text upper" onClick={login}>Login</a>
               </li>
             )}
           </ul>

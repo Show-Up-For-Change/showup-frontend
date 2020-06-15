@@ -33,7 +33,7 @@ class ThoughtLeadersContainer extends Component {
           <ThoughtLeader leader = {exampleThoughtLeader2}/>
           <ThoughtLeader leader = {exampleThoughtLeader3}/>
         {leaders ? (
-          leaders.map(leader => <ThoughtLeader leader = {leader}/>)
+          leaders.map(leader => <ThoughtLeader leader = {leader} key = {leader.id}/>)
         ) : (
           ""
         )

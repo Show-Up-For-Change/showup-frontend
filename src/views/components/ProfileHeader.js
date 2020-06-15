@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import {connect} from 'react-redux'
 
 export default class ProfileHeader extends Component {
   render () {
-    const info = this.props.info
-    console.log(info)
     return (
-
     <div>
       <span className="background-img position-absolute"></span>
       <div className="container">
@@ -34,7 +30,7 @@ export default class ProfileHeader extends Component {
 				  </div>
 				</div>
 
-				<a href="" className="small-text italic text-grey margin-bottom">edit</a>
+				<a href="/account" className="small-text italic text-grey margin-bottom">edit</a>
 
 			  </div>
 
