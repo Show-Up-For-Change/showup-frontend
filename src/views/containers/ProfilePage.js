@@ -22,7 +22,7 @@ class ProfilePage extends Component {
 
   render() {
     const loggedIn = getUserLocalStorage().facebookId;
-    return true ? (
+    return loggedIn ? (
       <main id="main-content dashboard">
         <div className="background-black transparecy padding-vertical position-relative hero">
           <ProfileHeader info={this.props.info} />
@@ -37,7 +37,9 @@ class ProfilePage extends Component {
           <footer className="footer background-black padding-vertical"></footer>
       </main>
     ) : (
-      <div>{this.goHome()}</div>
+      <div>
+        <Redirect to='/'/>
+      </div>
     );
   }
 }
