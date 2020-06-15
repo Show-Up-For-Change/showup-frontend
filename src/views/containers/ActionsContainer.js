@@ -15,7 +15,7 @@ class ActionsContainer extends Component {
     this.props.userId ? this.props.getCustomActions(this.props.userId) : this.props.getActions()
   }
 
-  handleRefreshButton () {
+  handleRefreshButton() {
     this.props.userId ? this.props.getCustomActions(this.props.userId) : this.props.getActions()
   }
 
@@ -37,7 +37,14 @@ class ActionsContainer extends Component {
         </div>
         <div className = "actions-list col-6 text-grey container">
          {actions ? (
-            actions.map(action => <Action action = {action} key = {action.id}/>)
+            actions.map(action => {
+              return (
+                <div key = {action.id}>
+                  <Action action = {action} key = {action.id}/>
+                  <p className="small-text italic" onClick = {()=>{console.log("done")}}>Done?</p>
+                </div>
+              )
+          })
          ) : (
            ''
          )}
