@@ -3,12 +3,13 @@ import { connect } from "react-redux";
 import {
   getUserLocalStorage,
   removeUserLocalStorage,
-  generateUser
+  login
 } from "../../localStorage";
 import { Redirect } from "react-router-dom";
 import Facebook from "./Facebook";
 
 class NavBar extends Component {
+
   render() {
     const loggedIn = getUserLocalStorage().facebookId;
     return (
@@ -43,7 +44,7 @@ class NavBar extends Component {
             ) : (
               <li>
                 {/* <Facebook /> */}
-                <a href='' className="nav-text upper" onClick={generateUser}>Login</a>
+                <a href='' className="nav-text upper" onClick={login}>Login</a>
               </li>
             )}
           </ul>

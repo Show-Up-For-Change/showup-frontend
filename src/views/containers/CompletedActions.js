@@ -22,10 +22,10 @@ export default class CompletedActionsContainer extends Component {
     }
 
     //Test vvv
-    const actions = [exampleAction1, exampleAction2]
+    // const actions = [exampleAction1, exampleAction2]
 
     // Production vvv
-    // const actions = info.actionsTaken
+    const actions = info.actionsTaken
 
     return (
       <div class="col-6">

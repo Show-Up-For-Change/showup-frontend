@@ -5,7 +5,9 @@ export const setUserLocalStorage = (email, facebookId, name) => {
 }
 
 export const removeUserLocalStorage = () => {
-  localStorage.clear();
+  localStorage.removeItem("email")
+  localStorage.removeItem("facebookId")
+  localStorage.removeItem("name")
 }
 
 export const getUserLocalStorage = () => {
@@ -25,4 +27,15 @@ export const generateUser = () => {
     facebookId: id
   }
   setUserLocalStorage(null, id, null)
+  localStorage.setItem("userId", id)
+}
+
+export const login = () => {
+  const id = localStorage.getItem("userId")
+  if (id){
+    setUserLocalStorage(null, id, null)
+  } else {
+    generateUser()
+  }
+  alert(id)
 }
