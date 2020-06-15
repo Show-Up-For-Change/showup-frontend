@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
 export default class ProfileHeader extends Component {
-  render () {
+	render () {
+		console.log(this.props)
+		const commitments = this.props.info.commitments ? this.props.info.commitments : []
+		let committed = {};
+		commitments.forEach(commitment => committed[commitment.kind] = commitment.amount)
     return (
     <div>
       <span className="background-img position-absolute"></span>
@@ -19,16 +23,20 @@ export default class ProfileHeader extends Component {
 				</p>
 
 				<div className="flex-wrapper">
+					{committed.money && (
 				  <div>
-					<span className="number-large">$20</span>
+					<span className="number-large">${committed.money}</span>
 					<p>every month</p>
 				  </div>
+					)}
 
+					{committed.time && (
 				  <div>
-					<span className="number-large">10 min</span>
+					<span className="number-large">${committed.time} min</span>
 					<p>every day</p>
 				  </div>
-				</div>
+					)}
+					</div>
 
 				<a href="/account" className="small-text italic text-grey margin-bottom">edit</a>
 
